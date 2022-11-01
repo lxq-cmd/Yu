@@ -5,10 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--.在手机是显示宽度=手机宽度.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="淡水鱼" content="鲫鱼，鲤鱼" />
+    <!-- 告诉浏览器安装应用的一些信息-->
+    <link rel="manifest" href="seochecker-manifest-4401.json" />
+    <!--浏览器前面的小图标-->
+    <link rel="icon" href="yubiao.ico" />
+
+    <title>鱼</title>
   </head>
   <body>
     <p>我<b>是</b>龙响全</p>
     <input value="手机屏幕" />
+    <!--如果用户浏览器支持serviceworker功能 那么当网页加载完成后加载sw.js文件去开启pwa功能-->
+    <script>
+      if ("serviceworker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("sw.js");
+        });
+      }
+    </script>
   </body>
 </html>
